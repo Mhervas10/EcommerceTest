@@ -6,5 +6,6 @@
 
 <div class="cart-item" *ngFor="let item of items">
   <span>{{ item.name }}</span>
-  <span>{{ item.price | currency }}</span>
+  <span>{{ item.counter }}</span>
+  <span>{{ item.price*item.counter | currency }}</span>
 </div>

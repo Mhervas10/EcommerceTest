@@ -13,17 +13,20 @@ export class ProductListComponent implements OnInit {
     {
       name: 'Green tea',
       price: 3.11,
-      id: 'GR1'
+      id: 'GR1',
+      counter: 0
     },
     {
       name: 'Strawberries',
       price: 5,
-      id: 'SR1'
+      id: 'SR1',
+      counter: 0
     },
     {
       name: 'Coffee',
       price: 11.23,
-      id: 'CF1'
+      id: 'CF1',
+      counter: 0
     }
   ];
 
@@ -33,13 +36,25 @@ export class ProductListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
   }
 
-  share() {
-    window.alert('The product has been shared!');
-  }
+  discounts(productIdName) {
+
+      if (productIdName == 'GR1'){
+        window.alert('This product has a buy-one-get-one-free offer!');
+      }else if (productIdName == 'SR1'){
+        window.alert('If you buy 3 or more, the price would drop to £4.50!');
+      }else if (productIdName == 'CF1'){
+        window.alert('If you buy 3 or more, this product has a 66% of the original price discount!');
+      }
+    }
   addToCart(product) {
-    
+    console.log('Your product has been added to the cart!');
     this.cartService.addToCart(product);
+  }
+  deleteFromCart(product) {
+    console.log('Your product has been deleted from the cart!');
+    this.cartService.deleteFromCart(product);
   }
 }

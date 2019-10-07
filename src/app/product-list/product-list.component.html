@@ -9,8 +9,10 @@
         <p *ngIf="product.price">
                 Price: {{ product.price }} £.
         </p>
-        <button (click)="share()">
-                Share
+        <button (click)="discounts(product.id)">
+                Available Discounts!
         </button>
-        <button (click)="addToCart(product)">Buy</button>
+        <!-- <button (click)="addToCart(product)">Buy</button>
+        {{ product.counter }}
+        <button (click)="deleteFromCart(product)">Delete</button> -->
 </div>

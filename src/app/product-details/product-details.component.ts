@@ -24,7 +24,11 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
   addToCart(product) {
-    window.alert('Your product has been added to the cart!');
+    console.log('Your product has been added to the cart!');
     this.cartService.addToCart(product);
+  }
+  deleteFromCart(product) {
+    console.log('Your product has been deleted from the cart!');
+    this.cartService.deleteFromCart(product);
   }
 }
